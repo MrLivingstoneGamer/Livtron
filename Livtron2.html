@@ -1,214 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Livtron AI</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
 
 body {
+
   margin: 0;
+
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: #0b1224;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  background:
+    #0b1224;
+
   color: white;
 }
 
 .header {
+
   text-align: center;
-  padding: 45px 20px 25px;
+
+  padding:
+    38px
+    15px
+    22px;
 }
 
 .logo {
+
   font-size: 42px;
+
   font-weight: bold;
+
+  letter-spacing: 1px;
 }
 
 .subtitle {
-  color: #9aa8c2;
-  font-size: 18px;
+
   margin-top: 8px;
+
+  font-size: 18px;
+
+  color: #9aa8c2;
 }
 
 .status {
-  margin-top: 18px;
-  color: #58e59a;
+
+  margin-top: 16px;
+
+  color: #55e89a;
+
   font-weight: bold;
 }
 
 .app {
+
   width: 94%;
+
   max-width: 700px;
+
   margin: auto;
-  background: #19263c;
+
+  background:
+    #19263c;
+
   border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+
+  padding: 18px;
+
+  box-shadow:
+    0 15px 45px
+    rgba(0,0,0,.35);
 }
 
 .chat {
+
   height: 55vh;
+
   min-height: 400px;
-  max-height: 600px;
+
+  max-height: 620px;
+
   overflow-y: auto;
-  background: #0d1629;
+
+  background:
+    #0d1629;
+
   border-radius: 20px;
+
   padding: 18px;
 }
 
 .message {
-  max-width: 85%;
-  padding: 15px 17px;
-  margin: 12px 0;
+
+  max-width: 86%;
+
+  padding:
+    14px
+    17px;
+
+  margin:
+    12px
+    0;
+
   border-radius: 18px;
-  line-height: 1.5;
+
+  line-height: 1.55;
+
   white-space: pre-wrap;
+
   word-wrap: break-word;
+
+  font-size: 16px;
 }
 
 .bot {
-  background: #263650;
+
+  background:
+    #263650;
+
   margin-right: auto;
 }
 
 .user {
-  background: #376db1;
+
+  background:
+    #376db1;
+
   margin-left: auto;
 }
 
 .input-area {
+
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+
+  gap: 9px;
+
+  margin-top: 14px;
 }
 
 #messageInput {
+
   flex: 1;
+
   min-width: 0;
-  border: none;
-  outline: none;
-  border-radius: 16px;
+
   padding: 16px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 16px;
+
   font-size: 16px;
 }
 
 #sendButton {
+
   border: none;
+
   border-radius: 16px;
-  padding: 0 24px;
-  background: #4b8df8;
+
+  padding:
+    0
+    23px;
+
+  background:
+    #4b8df8;
+
   color: white;
+
   font-size: 16px;
+
   font-weight: bold;
 }
 
 #sendButton:disabled {
-  opacity: .5;
+
+  opacity: .55;
 }
 
 .footer {
+
   text-align: center;
-  padding: 25px;
-  color: #73819a;
+
+  padding: 22px;
+
+  color: #71809a;
 }
 
 @media (max-width: 500px) {
+
   .logo {
+
     font-size: 34px;
   }
 
   .app {
+
     width: 96%;
+
     padding: 12px;
   }
 
   .chat {
+
     min-height: 430px;
   }
 
-  .input-area {
-    gap: 6px;
+  #sendButton {
+
+    padding:
+      0
+      16px;
   }
 
-  #sendButton {
-    padding: 0 16px;
-  }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="header">
-  <div class="logo">🏋 LIVTRON</div>
-  <div class="subtitle">Your AI. Your Rules.</div>
-  <div class="status">● Livtron AI Online</div>
+
+  <div class="logo">
+    🏋️ LIVTRON
+  </div>
+
+  <div class="subtitle">
+    Your AI. Your Rules.
+  </div>
+
+  <div class="status">
+    ● Livtron AI Online
+  </div>
+
 </div>
+
 
 <div class="app">
 
-  <div class="chat" id="chatBox">
 
-    <div class="message bot">
-      👋 Hello! I'm <b>Livtron AI</b>.
+<div class="chat" id="chatBox">
 
-      Ask me anything.
-    </div>
 
-  </div>
+<div class="message bot">
+👋 Hello! I'm Livtron AI.
 
-  <div class="input-area">
+Ask me anything.
+</div>
 
-    <input
-      id="messageInput"
-      type="text"
-      placeholder="Ask Livtron something..."
-      autocomplete="off"
-    >
-
-    <button id="sendButton">
-      Send
-    </button>
-
-  </div>
 
 </div>
 
+
+<div class="input-area">
+
+
+<input
+id="messageInput"
+type="text"
+placeholder="Ask Livtron something..."
+autocomplete="off"
+/>
+
+
+<button
+id="sendButton">
+Send
+</button>
+
+
+</div>
+
+
+</div>
+
+
 <div class="footer">
-  Powered by Livtron AI
+
+Powered by Livtron AI
+
 </div>
 
 
 <script>
 
+
 const WORKER_URL =
-  "https://livtronai.samarpal03.workers.dev";
+"https://livtronai.samarpal03.workers.dev";
+
 
 const input =
-  document.getElementById("messageInput");
+document.getElementById(
+"messageInput"
+);
+
 
 const sendButton =
-  document.getElementById("sendButton");
+document.getElementById(
+"sendButton"
+);
+
 
 const chatBox =
-  document.getElementById("chatBox");
+document.getElementById(
+"chatBox"
+);
 
 
-function addMessage(text, type) {
+function addMessage(
+  text,
+  type
+) {
 
   const message =
-    document.createElement("div");
+  document.createElement(
+    "div"
+  );
 
   message.className =
     "message " + type;
 
-  message.textContent = text;
+  message.textContent =
+    text;
 
-  chatBox.appendChild(message);
+  chatBox.appendChild(
+    message
+  );
 
   chatBox.scrollTop =
     chatBox.scrollHeight;
@@ -219,58 +359,105 @@ function addMessage(text, type) {
 
 async function sendMessage() {
 
+
   const text =
     input.value.trim();
 
-  if (!text) return;
 
-  addMessage(text, "user");
+  if (!text) {
+
+    return;
+
+  }
+
+
+  addMessage(
+    text,
+    "user"
+  );
+
 
   input.value = "";
 
-  sendButton.disabled = true;
+
+  sendButton.disabled =
+    true;
+
 
   const thinking =
-    addMessage("Thinking... 🤖", "bot");
+    addMessage(
+      "Thinking... 🧠",
+      "bot"
+    );
 
 
   try {
 
+
     const response =
-      await fetch(WORKER_URL, {
+      await fetch(
+        WORKER_URL,
+        {
 
-        method: "POST",
+          method: "POST",
 
-        headers: {
-          "Content-Type": "application/json"
-        },
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
 
-        body: JSON.stringify({
-          message: text
-        })
+          body:
+            JSON.stringify({
+              message: text
+            })
 
-      });
+        }
+      );
 
 
-    const data =
-      await response.json();
+    const raw =
+      await response.text();
+
+
+    let data;
+
+
+    try {
+
+      data =
+        JSON.parse(raw);
+
+    } catch {
+
+      throw new Error(
+        "Worker returned invalid data: "
+        + raw.substring(0,200)
+      );
+
+    }
 
 
     thinking.remove();
 
 
-    if (data.success === true) {
+    if (
+      response.ok &&
+      data.success
+    ) {
 
       addMessage(
-        data.reply || "I didn't receive a response.",
+        data.reply,
         "bot"
       );
 
     } else {
 
       addMessage(
-        "⚠️ Livtron error: " +
-        (data.error || "Unknown error"),
+        "⚠️ Livtron error:\n"
+        + (
+          data.error ||
+          "Unknown Worker error"
+        ),
         "bot"
       );
 
@@ -279,21 +466,31 @@ async function sendMessage() {
 
   } catch (error) {
 
+
     thinking.remove();
 
+
     addMessage(
-      "❌ Connection error. Please try again.",
+      "❌ Connection problem:\n"
+      + error.message,
       "bot"
     );
 
-    console.error(error);
+
+    console.error(
+      "Livtron error:",
+      error
+    );
 
   }
 
 
-  sendButton.disabled = false;
+  sendButton.disabled =
+    false;
+
 
   input.focus();
+
 }
 
 
@@ -307,14 +504,21 @@ input.addEventListener(
   "keydown",
   function(event) {
 
-    if (event.key === "Enter") {
+    if (
+      event.key === "Enter"
+    ) {
+
       sendMessage();
+
     }
 
   }
 );
 
+
 </script>
 
+
 </body>
+
 </html>
