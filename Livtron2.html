@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livtron AI</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1224;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .app {
+      width: 92%;
+      max-width: 650px;
+      background: #18243a;
+      border-radius: 25px;
+      padding: 25px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .status {
+      text-align: center;
+      color: #55e89a;
+      margin-bottom: 20px;
+    }
+
+    .chat {
+      height: 430px;
+      overflow-y: auto;
+      background: #0e172b;
+      border-radius: 18px;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .message {
+      padding: 14px 16px;
+      margin: 10px 0;
+      border-radius: 15px;
+      max-width: 85%;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .user {
+      background: #3268ad;
+      margin-left: auto;
+    }
+
+    .bot {
+      background: #263651;
+      margin-right: auto;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    input {
+      flex: 1;
+      padding: 16px;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      border: none;
+      border-radius: 15px;
+      padding: 0 22px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <h1>🤖 LIVTRON</h1>
+
+  <div class="status">
+    🟢 Livtron AI Online
+  </div>
+
+  <div class="chat" id="chatBox">
+
+    <div class="message bot">
+      👋 Hello! I'm <b>Livtron AI</b>.<br>
+      Ask me anything.
+    </div>
+
+  </div>
+
+  <div class="input-area">
+
+    <input
+      id="messageInput"
+      type="text"
+      placeholder="Ask Livtron something..."
+      autocomplete="off"
+    >
+
+    <button id="sendButton">
+      Send
+    </button>
+
+  </div>
+
+  <div class="footer">
+    Powered by Livtron AI
+  </div>
+
+</div>
+
+<script>
+
+const WORKER_URL =
+  "https://livtronai.samarpal03.workers.dev";
+
+const input =
+  document.getElementById("messageInput");
+
+const sendButton =
+  document.getElementById("sendButton");
+
+const chatBox =
+  document.getElementById("chatBox");
+
+
+function addMessage(text, type) {
+
+  const message =
+    document.createElement("div");
+
+  message.className =
+    "message " + type;
+
+  message.textContent = text;
+
+  chatBox.appendChild(message);
+
+  chatBox.scrollTop =
+    chatBox.scrollHeight;
+}
+
+
+async function sendMessage() {
+
+  const message =
+    input.value.trim();
+
+  if (!message) return;
+
+  addMessage(message, "user");
+
+  input.value = "";
+
+  sendButton.disabled = true;
+
+  addMessage("Thinking...", "bot");
+
+  const thinking =
+    chatBox.lastElementChild;
+
+  try {
+
+    const response =
+      await fetch(WORKER_URL, {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          message: message
+        })
+
+      });
+
+    const data =
+      await response.json();
+
+    thinking.remove();
+
+    if (data.success) {
+
+      addMessage(
+        data.reply,
+        "bot"
+      );
+
+    } else {
+
+      addMessage(
+        "❌ Livtron error: " +
+        (data.error || "Unknown error"),
+        "bot"
+      );
+
+    }
+
+  } catch (error) {
+
+    thinking.remove();
+
+    addMessage(
+      "❌ Unable to connect to Livtron AI.",
+      "bot"
+    );
+
+    console.error(error);
+
+  }
+
+  sendButton.disabled = false;
+
+  input.focus();
+}
+
+
+sendButton.addEventListener(
+  "click",
+  sendMessage
+);
+
+
+input.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+
+  }
+);
+
+</script>
+
+</body>
+  </html>
