@@ -12,6 +12,11 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* =========================================
+   LIVTRON BETA 2
+   FUTURISTIC AI ASSISTANT UI
+========================================= */
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -45,7 +50,9 @@ body {
   overflow: hidden;
 }
 
-/* CIRCUIT BACKGROUND */
+/* =========================================
+   BACKGROUND CIRCUITS
+========================================= */
 
 body::before {
 
@@ -78,7 +85,6 @@ body::before {
   background-size:
     90px 90px,
     90px 90px;
-
 }
 
 .circuit {
@@ -154,7 +160,9 @@ body::before {
 
 }
 
-/* APP */
+/* =========================================
+   APP
+========================================= */
 
 .app {
 
@@ -180,7 +188,9 @@ body::before {
     12px;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .header {
 
@@ -263,7 +273,9 @@ body::before {
     0 0 10px #45ff9d;
 }
 
-/* CHAT */
+/* =========================================
+   CHAT
+========================================= */
 
 .chat {
 
@@ -365,7 +377,9 @@ body::before {
     rgba(0,205,255,.35);
 }
 
-/* THINKING */
+/* =========================================
+   THINKING
+========================================= */
 
 .thinking {
 
@@ -415,7 +429,9 @@ body::before {
 
 }
 
-/* INPUT */
+/* =========================================
+   INPUT
+========================================= */
 
 .input-panel {
 
@@ -475,7 +491,9 @@ body::before {
   color: #718ba4;
 }
 
-/* BUTTONS */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .icon-button,
 #sendButton {
@@ -536,15 +554,20 @@ body::before {
   color: white;
 
   font-weight: bold;
+
+  box-shadow:
+    0 0 15px
+    rgba(0,174,255,.20);
 }
 
 #sendButton:disabled {
 
   opacity: .45;
-
 }
 
-/* VOICE */
+/* =========================================
+   VOICE
+========================================= */
 
 .voice-area {
 
@@ -631,7 +654,9 @@ body::before {
   margin-top: 3px;
 }
 
-/* TOOLBAR */
+/* =========================================
+   TOOLBAR
+========================================= */
 
 .toolbar {
 
@@ -658,15 +683,18 @@ body::before {
 
   cursor: pointer;
 
-  padding: 7px 10px;
+  padding:
+    7px
+    10px;
 }
 
 .tool:hover {
-
   color: #00c8ff;
 }
 
-/* DELETE CONFIRMATION */
+/* =========================================
+   DELETE MODAL
+========================================= */
 
 .delete-confirm {
 
@@ -722,8 +750,6 @@ body::before {
 .delete-box h3 {
 
   margin-top: 0;
-
-  color: white;
 }
 
 .delete-box p {
@@ -762,18 +788,131 @@ body::before {
 }
 
 #confirmDelete {
-
-  background:
-    #c73545;
+  background: #c73545;
 }
 
 #cancelDelete {
+  background: #17415d;
+}
+
+/* =========================================
+   ACTION MODAL
+========================================= */
+
+.action-confirm {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 30;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(0,5,15,.78);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.action-box {
+
+  width: 100%;
+
+  max-width: 340px;
+
+  padding: 25px;
+
+  border-radius: 22px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b2943,
+      #061523
+    );
+
+  border:
+    1px solid
+    rgba(0,200,255,.35);
+
+  box-shadow:
+    0 0 35px
+    rgba(0,174,255,.2);
+}
+
+.action-box h3 {
+
+  margin-top: 0;
+
+  color: #00c8ff;
+}
+
+.action-box p {
+
+  color: #9bb2c5;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.action-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.action-buttons button {
+
+  border: none;
+
+  padding:
+    11px
+    18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: bold;
+}
+
+#confirmAction {
+
+  background:
+    linear-gradient(
+      135deg,
+      #008ed0,
+      #0065a0
+    );
+}
+
+#cancelAction {
 
   background:
     #17415d;
 }
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer {
 
@@ -791,7 +930,9 @@ body::before {
   letter-spacing: 1px;
 }
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 500px) {
 
@@ -815,7 +956,9 @@ body::before {
   }
 
   .chat {
-    padding: 8px 3px;
+    padding:
+      8px
+      3px;
   }
 
   .message {
@@ -832,7 +975,8 @@ body::before {
   #sendButton {
 
     padding:
-      0 14px;
+      0
+      14px;
   }
 
 }
@@ -843,6 +987,8 @@ body::before {
 
 <body>
 
+<!-- BACKGROUND -->
+
 <div class="circuit c1"></div>
 <div class="circuit c2"></div>
 <div class="circuit c3"></div>
@@ -851,6 +997,8 @@ body::before {
 
 
 <div class="app">
+
+  <!-- HEADER -->
 
   <div class="header">
 
@@ -873,6 +1021,8 @@ body::before {
   </div>
 
 
+  <!-- CHAT -->
+
   <div
     class="chat"
     id="chatBox"
@@ -888,6 +1038,8 @@ body::before {
 
   </div>
 
+
+  <!-- VOICE -->
 
   <div class="voice-area">
 
@@ -908,6 +1060,8 @@ body::before {
     TAP TO SPEAK
   </div>
 
+
+  <!-- INPUT -->
 
   <div class="input-panel">
 
@@ -939,6 +1093,8 @@ body::before {
   </div>
 
 
+  <!-- TOOLBAR -->
+
   <div class="toolbar">
 
     <button
@@ -960,7 +1116,7 @@ body::before {
 
   <div class="footer">
 
-    LIVTRON AI • QWEN3 • WEB • MEMORY
+    LIVTRON AI • QWEN3 • WEB • MEMORY • ACTIONS
 
   </div>
 
@@ -981,22 +1137,52 @@ body::before {
     </h3>
 
     <p>
-      This will clear the current conversation
-      from this device.
+      This clears the conversation saved on this device.
+      Your long-term Livtron memory is not deleted.
     </p>
 
     <div class="delete-buttons">
 
-      <button
-        id="cancelDelete"
-      >
+      <button id="cancelDelete">
         Cancel
       </button>
 
-      <button
-        id="confirmDelete"
-      >
+      <button id="confirmDelete">
         Delete
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ACTION CONFIRMATION -->
+
+<div
+  class="action-confirm"
+  id="actionConfirm"
+>
+
+  <div class="action-box">
+
+    <h3 id="actionTitle">
+      Livtron Action
+    </h3>
+
+    <p id="actionDescription">
+      Livtron wants to perform an action.
+    </p>
+
+    <div class="action-buttons">
+
+      <button id="cancelAction">
+        Cancel
+      </button>
+
+      <button id="confirmAction">
+        Continue
       </button>
 
     </div>
@@ -1008,13 +1194,17 @@ body::before {
 
 <script>
 
-/* =================================
-   LIVTRON CONNECTION
-================================= */
+/* =========================================
+   WORKER
+========================================= */
 
 const WORKER_URL =
 "https://livtronai.samarpal03.workers.dev";
 
+
+/* =========================================
+   ELEMENTS
+========================================= */
 
 const input =
 document.getElementById(
@@ -1071,10 +1261,35 @@ document.getElementById(
   "cancelDelete"
 );
 
+const actionConfirm =
+document.getElementById(
+  "actionConfirm"
+);
 
-/* =================================
+const actionTitle =
+document.getElementById(
+  "actionTitle"
+);
+
+const actionDescription =
+document.getElementById(
+  "actionDescription"
+);
+
+const confirmAction =
+document.getElementById(
+  "confirmAction"
+);
+
+const cancelAction =
+document.getElementById(
+  "cancelAction"
+);
+
+
+/* =========================================
    STATE
-================================= */
+========================================= */
 
 let lastReply = "";
 
@@ -1082,10 +1297,12 @@ let recognition = null;
 
 let isListening = false;
 
+let pendingAction = null;
 
-/* =================================
-   SAVE CHAT LOCALLY
-================================= */
+
+/* =========================================
+   LOCAL CHAT STORAGE
+========================================= */
 
 function saveChat() {
 
@@ -1107,10 +1324,6 @@ function saveChat() {
 
 }
 
-
-/* =================================
-   LOAD CHAT
-================================= */
 
 function loadChat() {
 
@@ -1143,9 +1356,9 @@ function loadChat() {
 }
 
 
-/* =================================
-   ADD MESSAGE
-================================= */
+/* =========================================
+   MESSAGE
+========================================= */
 
 function addMessage(
   text,
@@ -1176,9 +1389,9 @@ function addMessage(
 }
 
 
-/* =================================
+/* =========================================
    THINKING
-================================= */
+========================================= */
 
 function addThinking() {
 
@@ -1210,9 +1423,9 @@ function addThinking() {
 }
 
 
-/* =================================
-   TEXT TO SPEECH
-================================= */
+/* =========================================
+   SPEECH OUTPUT
+========================================= */
 
 function speak(text) {
 
@@ -1228,13 +1441,8 @@ function speak(text) {
 
 
   /*
-    Pronunciation fix:
-
-    Display:
-    LIVTRON
-
-    Voice:
-    Liv Tron
+    Pronunciation:
+    LIVTRON → Liv Tron
   */
 
   const spokenText =
@@ -1275,10 +1483,6 @@ function speak(text) {
 }
 
 
-/* =================================
-   STOP SPEAKING
-================================= */
-
 function stopSpeaking() {
 
   if (
@@ -1292,9 +1496,517 @@ function stopSpeaking() {
 }
 
 
-/* =================================
+/* =========================================
+   ACTION HELPERS
+========================================= */
+
+function cleanNumber(value) {
+
+  return value.replace(
+    /[^\d+]/g,
+    ""
+  );
+
+}
+
+
+function normalizeIndiaNumber(number) {
+
+  let cleaned =
+    cleanNumber(number);
+
+
+  if (
+    cleaned.startsWith("+91")
+  ) {
+
+    return cleaned
+      .replace("+", "");
+
+  }
+
+
+  if (
+    cleaned.startsWith("91") &&
+    cleaned.length === 12
+  ) {
+
+    return cleaned;
+
+  }
+
+
+  if (
+    cleaned.length === 10
+  ) {
+
+    return "91" + cleaned;
+
+  }
+
+
+  return cleaned;
+
+}
+
+
+/* =========================================
+   ACTION CONFIRMATION
+========================================= */
+
+function askForActionConfirmation(
+  title,
+  description,
+  action
+) {
+
+  actionTitle.textContent =
+    title;
+
+  actionDescription.textContent =
+    description;
+
+  pendingAction =
+    action;
+
+  actionConfirm.style.display =
+    "flex";
+
+}
+
+
+/* =========================================
+   EXECUTE ACTION
+========================================= */
+
+function executeAction(
+  action
+) {
+
+  if (!action) {
+    return;
+  }
+
+
+  actionConfirm.style.display =
+    "none";
+
+
+  pendingAction = null;
+
+
+  if (
+    action.type === "call"
+  ) {
+
+    addMessage(
+      "📞 Opening phone dialer for " +
+      action.number + "...",
+      "bot"
+    );
+
+
+    window.location.href =
+      "tel:" + action.number;
+
+    return;
+  }
+
+
+  if (
+    action.type === "whatsapp"
+  ) {
+
+    addMessage(
+      "💬 Opening WhatsApp...",
+      "bot"
+    );
+
+
+    window.location.href =
+      "https://wa.me/" +
+      action.number;
+
+    return;
+  }
+
+
+  if (
+    action.type === "open"
+  ) {
+
+    addMessage(
+      "🌐 Opening " +
+      action.name + "...",
+      "bot"
+    );
+
+
+    window.location.href =
+      action.url;
+
+    return;
+  }
+
+}
+
+
+/* =========================================
+   ACTION ROUTER
+========================================= */
+
+function handleLivtronAction(
+  originalText
+) {
+
+  const text =
+    originalText
+      .trim()
+      .toLowerCase();
+
+
+  /*
+    Remove "Livtron" from the beginning
+    so voice commands like:
+
+    "Livtron, open YouTube"
+
+    work naturally.
+  */
+
+  const command =
+    text
+      .replace(
+        /^livtron[\s,.:!-]*/i,
+        ""
+      )
+      .trim();
+
+
+  /* =======================================
+     CALL
+  ======================================= */
+
+  const callMatch =
+    command.match(
+      /^(?:call|dial|phone)\s+(?:this\s+)?(?:number\s+)?(.+)$/
+    );
+
+
+  if (callMatch) {
+
+    const number =
+      cleanNumber(
+        callMatch[1]
+      );
+
+
+    if (
+      number.length >= 7
+    ) {
+
+      askForActionConfirmation(
+        "📞 Make a call?",
+        "Livtron is ready to call " +
+        number + ".",
+        {
+          type: "call",
+          number: number
+        }
+      );
+
+      return true;
+
+    }
+
+  }
+
+
+  /* =======================================
+     WHATSAPP
+  ======================================= */
+
+  const whatsappMatch =
+    command.match(
+      /^(?:whatsapp|message\s+on\s+whatsapp|chat\s+on\s+whatsapp)\s+(.+)$/
+    );
+
+
+  if (whatsappMatch) {
+
+    const number =
+      normalizeIndiaNumber(
+        whatsappMatch[1]
+      );
+
+
+    if (
+      number.length >= 10
+    ) {
+
+      askForActionConfirmation(
+        "💬 Open WhatsApp?",
+        "Livtron will open a WhatsApp chat with " +
+        number + ".",
+        {
+          type: "whatsapp",
+          number: number
+        }
+      );
+
+      return true;
+
+    }
+
+  }
+
+
+  /* =======================================
+     YOUTUBE
+  ======================================= */
+
+  if (
+    command === "youtube" ||
+    command === "open youtube" ||
+    command === "open youtube app"
+  ) {
+
+    askForActionConfirmation(
+      "▶️ Open YouTube?",
+      "Livtron will open YouTube.",
+      {
+        type: "open",
+        name: "YouTube",
+        url:
+          "https://www.youtube.com"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     GOOGLE
+  ======================================= */
+
+  if (
+    command === "google" ||
+    command === "open google"
+  ) {
+
+    askForActionConfirmation(
+      "🔎 Open Google?",
+      "Livtron will open Google.",
+      {
+        type: "open",
+        name: "Google",
+        url:
+          "https://www.google.com"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     WHATSAPP APP
+  ======================================= */
+
+  if (
+    command === "whatsapp" ||
+    command === "open whatsapp" ||
+    command === "open whatsapp app"
+  ) {
+
+    askForActionConfirmation(
+      "💬 Open WhatsApp?",
+      "Livtron will try to open WhatsApp.",
+      {
+        type: "open",
+        name: "WhatsApp",
+        url:
+          "whatsapp://send"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     GITHUB
+  ======================================= */
+
+  if (
+    command === "github" ||
+    command === "open github"
+  ) {
+
+    askForActionConfirmation(
+      "💻 Open GitHub?",
+      "Livtron will open GitHub.",
+      {
+        type: "open",
+        name: "GitHub",
+        url:
+          "https://github.com"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     GMAIL
+  ======================================= */
+
+  if (
+    command === "gmail" ||
+    command === "open gmail"
+  ) {
+
+    askForActionConfirmation(
+      "📧 Open Gmail?",
+      "Livtron will open Gmail.",
+      {
+        type: "open",
+        name: "Gmail",
+        url:
+          "https://mail.google.com"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     INSTAGRAM
+  ======================================= */
+
+  if (
+    command === "instagram" ||
+    command === "open instagram"
+  ) {
+
+    askForActionConfirmation(
+      "📸 Open Instagram?",
+      "Livtron will open Instagram.",
+      {
+        type: "open",
+        name: "Instagram",
+        url:
+          "https://www.instagram.com"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     FACEBOOK
+  ======================================= */
+
+  if (
+    command === "facebook" ||
+    command === "open facebook"
+  ) {
+
+    askForActionConfirmation(
+      "📘 Open Facebook?",
+      "Livtron will open Facebook.",
+      {
+        type: "open",
+        name: "Facebook",
+        url:
+          "https://www.facebook.com"
+      }
+    );
+
+    return true;
+
+  }
+
+
+  /* =======================================
+     GENERIC WEBSITE
+  ======================================= */
+
+  const openMatch =
+    command.match(
+      /^open\s+(.+)$/
+    );
+
+
+  if (openMatch) {
+
+    let site =
+      openMatch[1]
+        .trim();
+
+
+    /*
+      Avoid treating normal
+      multi-word questions as URLs.
+    */
+
+    if (
+      site.includes(".") ||
+      !site.includes(" ")
+    ) {
+
+      if (
+        !site.startsWith(
+          "http://"
+        ) &&
+        !site.startsWith(
+          "https://"
+        )
+      ) {
+
+        site =
+          "https://" + site;
+
+      }
+
+
+      askForActionConfirmation(
+        "🌐 Open website?",
+        "Livtron will open " +
+        site + ".",
+        {
+          type: "open",
+          name: site,
+          url: site
+        }
+      );
+
+
+      return true;
+
+    }
+
+  }
+
+
+  return false;
+
+}
+
+
+/* =========================================
    SEND MESSAGE
-================================= */
+========================================= */
 
 async function sendMessage(
   forcedText = null
@@ -1307,6 +2019,23 @@ async function sendMessage(
 
 
   if (!text) {
+    return;
+  }
+
+
+  /*
+    ACTIONS FIRST
+
+    Normal questions go to Qwen.
+  */
+
+  if (
+    handleLivtronAction(text)
+  ) {
+
+    input.value = "";
+
+    input.focus();
 
     return;
 
@@ -1367,7 +2096,9 @@ async function sendMessage(
       data =
         JSON.parse(raw);
 
-    } catch {
+    }
+
+    catch {
 
       throw new Error(
         "Worker returned invalid data."
@@ -1398,8 +2129,9 @@ async function sendMessage(
         lastReply
       );
 
+    }
 
-    } else {
+    else {
 
       addMessage(
         "⚠️ Livtron error:\n" +
@@ -1446,9 +2178,45 @@ async function sendMessage(
 }
 
 
-/* =================================
-   VOICE RECOGNITION
-================================= */
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+sendButton.addEventListener(
+  "click",
+  function() {
+
+    sendMessage();
+
+  }
+);
+
+
+/* =========================================
+   ENTER KEY
+========================================= */
+
+input.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Enter"
+    ) {
+
+      event.preventDefault();
+
+      sendMessage();
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   SPEECH RECOGNITION
+========================================= */
 
 const SpeechRecognition =
   window.SpeechRecognition ||
@@ -1497,7 +2265,8 @@ if (SpeechRecognition) {
       const transcript =
         event
           .results[0][0]
-          .transcript;
+          .transcript
+          .trim();
 
 
       input.value =
@@ -1506,6 +2275,27 @@ if (SpeechRecognition) {
 
       voiceLabel.textContent =
         "PROCESSING...";
+
+
+      /*
+        Voice commands also go through
+        the Action Router.
+      */
+
+      if (
+        handleLivtronAction(
+          transcript
+        )
+      ) {
+
+        input.value = "";
+
+        voiceLabel.textContent =
+          "TAP TO SPEAK";
+
+        return;
+
+      }
 
 
       sendMessage(
@@ -1550,9 +2340,9 @@ if (SpeechRecognition) {
 }
 
 
-/* =================================
+/* =========================================
    VOICE BUTTON
-================================= */
+========================================= */
 
 voiceButton.addEventListener(
   "click",
@@ -1597,45 +2387,9 @@ voiceButton.addEventListener(
 );
 
 
-/* =================================
-   SEND
-================================= */
-
-sendButton.addEventListener(
-  "click",
-  function() {
-
-    sendMessage();
-
-  }
-);
-
-
-/* =================================
-   ENTER
-================================= */
-
-input.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (
-      event.key === "Enter"
-    ) {
-
-      event.preventDefault();
-
-      sendMessage();
-
-    }
-
-  }
-);
-
-
-/* =================================
-   STOP VOICE
-================================= */
+/* =========================================
+   STOP SPEAKING
+========================================= */
 
 stopButton.addEventListener(
   "click",
@@ -1647,9 +2401,9 @@ stopButton.addEventListener(
 );
 
 
-/* =================================
+/* =========================================
    SPEAK LAST
-================================= */
+========================================= */
 
 speakLastButton.addEventListener(
   "click",
@@ -1667,9 +2421,9 @@ speakLastButton.addEventListener(
 );
 
 
-/* =================================
-   OPEN DELETE CONFIRMATION
-================================= */
+/* =========================================
+   DELETE CHAT
+========================================= */
 
 clearButton.addEventListener(
   "click",
@@ -1682,10 +2436,6 @@ clearButton.addEventListener(
 );
 
 
-/* =================================
-   CANCEL DELETE
-================================= */
-
 cancelDelete.addEventListener(
   "click",
   function() {
@@ -1697,15 +2447,12 @@ cancelDelete.addEventListener(
 );
 
 
-/* =================================
-   DELETE CHAT
-================================= */
-
 confirmDelete.addEventListener(
   "click",
   function() {
 
     stopSpeaking();
+
 
     localStorage.removeItem(
       "livtron_chat"
@@ -1734,9 +2481,39 @@ confirmDelete.addEventListener(
 );
 
 
-/* =================================
-   LOAD SAVED CHAT
-================================= */
+/* =========================================
+   ACTION CONFIRMATION
+========================================= */
+
+cancelAction.addEventListener(
+  "click",
+  function() {
+
+    actionConfirm.style.display =
+      "none";
+
+    pendingAction =
+      null;
+
+  }
+);
+
+
+confirmAction.addEventListener(
+  "click",
+  function() {
+
+    executeAction(
+      pendingAction
+    );
+
+  }
+);
+
+
+/* =========================================
+   LOAD CHAT
+========================================= */
 
 loadChat();
 
@@ -1744,4 +2521,4 @@ loadChat();
 
 </body>
 
-   </html>
+  </html>
