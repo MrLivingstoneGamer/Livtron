@@ -12,10 +12,6 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* ================================
-   LIVTRON FUTURISTIC UI
-================================ */
-
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -49,9 +45,7 @@ body {
   overflow: hidden;
 }
 
-/* ================================
-   CIRCUIT BACKGROUND
-================================ */
+/* CIRCUIT BACKGROUND */
 
 body::before {
 
@@ -85,15 +79,7 @@ body::before {
     90px 90px,
     90px 90px;
 
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 90%
-    );
 }
-
-/* glowing circuit lines */
 
 .circuit {
 
@@ -168,9 +154,7 @@ body::before {
 
 }
 
-/* ================================
-   APP
-================================ */
+/* APP */
 
 .app {
 
@@ -196,9 +180,7 @@ body::before {
     12px;
 }
 
-/* ================================
-   HEADER
-================================ */
+/* HEADER */
 
 .header {
 
@@ -265,10 +247,6 @@ body::before {
   color: #4dffac;
 
   font-size: 12px;
-
-  box-shadow:
-    0 0 15px
-    rgba(0,190,255,.12);
 }
 
 .status-dot {
@@ -285,9 +263,7 @@ body::before {
     0 0 10px #45ff9d;
 }
 
-/* ================================
-   CHAT
-================================ */
+/* CHAT */
 
 .chat {
 
@@ -387,15 +363,9 @@ body::before {
   border:
     1px solid
     rgba(0,205,255,.35);
-
-  box-shadow:
-    0 0 18px
-    rgba(0,150,255,.16);
 }
 
-/* ================================
-   THINKING
-================================ */
+/* THINKING */
 
 .thinking {
 
@@ -445,9 +415,7 @@ body::before {
 
 }
 
-/* ================================
-   INPUT PANEL
-================================ */
+/* INPUT */
 
 .input-panel {
 
@@ -507,9 +475,7 @@ body::before {
   color: #718ba4;
 }
 
-/* ================================
-   BUTTONS
-================================ */
+/* BUTTONS */
 
 .icon-button,
 #sendButton {
@@ -570,10 +536,6 @@ body::before {
   color: white;
 
   font-weight: bold;
-
-  box-shadow:
-    0 0 15px
-    rgba(0,174,255,.25);
 }
 
 #sendButton:disabled {
@@ -582,9 +544,7 @@ body::before {
 
 }
 
-/* ================================
-   VOICE AREA
-================================ */
+/* VOICE */
 
 .voice-area {
 
@@ -630,9 +590,6 @@ body::before {
     rgba(0,195,255,.35),
     inset 0 0 15px
     rgba(0,195,255,.18);
-
-  transition:
-    .2s;
 }
 
 #voiceButton.listening {
@@ -674,9 +631,7 @@ body::before {
   margin-top: 3px;
 }
 
-/* ================================
-   TOOLBAR
-================================ */
+/* TOOLBAR */
 
 .toolbar {
 
@@ -687,6 +642,8 @@ body::before {
   gap: 18px;
 
   padding-top: 8px;
+
+  flex-wrap: wrap;
 }
 
 .tool {
@@ -700,15 +657,123 @@ body::before {
   font-size: 12px;
 
   cursor: pointer;
+
+  padding: 7px 10px;
 }
 
 .tool:hover {
+
   color: #00c8ff;
 }
 
-/* ================================
-   FOOTER
-================================ */
+/* DELETE CONFIRMATION */
+
+.delete-confirm {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 20;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(0,5,15,.78);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.delete-box {
+
+  width: 100%;
+
+  max-width: 330px;
+
+  padding: 25px;
+
+  border-radius: 22px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b2943,
+      #061523
+    );
+
+  border:
+    1px solid
+    rgba(0,200,255,.35);
+
+  box-shadow:
+    0 0 35px
+    rgba(0,174,255,.2);
+}
+
+.delete-box h3 {
+
+  margin-top: 0;
+
+  color: white;
+}
+
+.delete-box p {
+
+  color: #8ba4ba;
+
+  font-size: 14px;
+}
+
+.delete-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.delete-buttons button {
+
+  border: none;
+
+  padding:
+    11px
+    18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: bold;
+}
+
+#confirmDelete {
+
+  background:
+    #c73545;
+}
+
+#cancelDelete {
+
+  background:
+    #17415d;
+}
+
+/* FOOTER */
 
 .footer {
 
@@ -726,9 +791,7 @@ body::before {
   letter-spacing: 1px;
 }
 
-/* ================================
-   MOBILE
-================================ */
+/* MOBILE */
 
 @media (max-width: 500px) {
 
@@ -772,24 +835,6 @@ body::before {
       0 14px;
   }
 
-  #messageInput {
-
-    font-size: 15px;
-  }
-
-}
-
-/* ================================
-   DESKTOP
-================================ */
-
-@media (min-width: 800px) {
-
-  .app {
-
-    max-width: 900px;
-  }
-
 }
 
 </style>
@@ -797,8 +842,6 @@ body::before {
 </head>
 
 <body>
-
-<!-- Circuit background -->
 
 <div class="circuit c1"></div>
 <div class="circuit c2"></div>
@@ -808,8 +851,6 @@ body::before {
 
 
 <div class="app">
-
-  <!-- HEADER -->
 
   <div class="header">
 
@@ -832,8 +873,6 @@ body::before {
   </div>
 
 
-  <!-- CHAT -->
-
   <div
     class="chat"
     id="chatBox"
@@ -850,8 +889,6 @@ body::before {
   </div>
 
 
-  <!-- VOICE -->
-
   <div class="voice-area">
 
     <button
@@ -863,6 +900,7 @@ body::before {
 
   </div>
 
+
   <div
     class="voice-label"
     id="voiceLabel"
@@ -870,8 +908,6 @@ body::before {
     TAP TO SPEAK
   </div>
 
-
-  <!-- INPUT -->
 
   <div class="input-panel">
 
@@ -887,7 +923,7 @@ body::before {
       <button
         class="icon-button"
         id="stopButton"
-        title="Stop voice"
+        title="Stop speaking"
       >
         🔇
       </button>
@@ -903,15 +939,13 @@ body::before {
   </div>
 
 
-  <!-- TOOLS -->
-
   <div class="toolbar">
 
     <button
       class="tool"
       id="clearButton"
     >
-      🗑️ Clear Chat
+      🗑️ Delete Chat
     </button>
 
     <button
@@ -927,6 +961,45 @@ body::before {
   <div class="footer">
 
     LIVTRON AI • QWEN3 • WEB • MEMORY
+
+  </div>
+
+</div>
+
+
+<!-- DELETE CONFIRMATION -->
+
+<div
+  class="delete-confirm"
+  id="deleteConfirm"
+>
+
+  <div class="delete-box">
+
+    <h3>
+      🗑️ Delete Chat?
+    </h3>
+
+    <p>
+      This will clear the current conversation
+      from this device.
+    </p>
+
+    <div class="delete-buttons">
+
+      <button
+        id="cancelDelete"
+      >
+        Cancel
+      </button>
+
+      <button
+        id="confirmDelete"
+      >
+        Delete
+      </button>
+
+    </div>
 
   </div>
 
@@ -983,6 +1056,21 @@ document.getElementById(
   "speakLastButton"
 );
 
+const deleteConfirm =
+document.getElementById(
+  "deleteConfirm"
+);
+
+const confirmDelete =
+document.getElementById(
+  "confirmDelete"
+);
+
+const cancelDelete =
+document.getElementById(
+  "cancelDelete"
+);
+
 
 /* =================================
    STATE
@@ -993,6 +1081,66 @@ let lastReply = "";
 let recognition = null;
 
 let isListening = false;
+
+
+/* =================================
+   SAVE CHAT LOCALLY
+================================= */
+
+function saveChat() {
+
+  try {
+
+    localStorage.setItem(
+      "livtron_chat",
+      chatBox.innerHTML
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Could not save chat:",
+      error
+    );
+
+  }
+
+}
+
+
+/* =================================
+   LOAD CHAT
+================================= */
+
+function loadChat() {
+
+  try {
+
+    const savedChat =
+      localStorage.getItem(
+        "livtron_chat"
+      );
+
+    if (savedChat) {
+
+      chatBox.innerHTML =
+        savedChat;
+
+      chatBox.scrollTop =
+        chatBox.scrollHeight;
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Could not load chat:",
+      error
+    );
+
+  }
+
+}
 
 
 /* =================================
@@ -1021,6 +1169,8 @@ function addMessage(
 
   chatBox.scrollTop =
     chatBox.scrollHeight;
+
+  saveChat();
 
   return message;
 }
@@ -1076,22 +1226,52 @@ function speak(text) {
 
   window.speechSynthesis.cancel();
 
+
+  /*
+    Pronunciation fix:
+
+    Display:
+    LIVTRON
+
+    Voice:
+    Liv Tron
+  */
+
+  const spokenText =
+    text
+      .replace(
+        /\bLivtron\b/gi,
+        "Liv Tron"
+      )
+      .replace(
+        /\bLIVTRON\b/g,
+        "Liv Tron"
+      );
+
+
   const utterance =
     new SpeechSynthesisUtterance(
-      text
+      spokenText
     );
 
-  utterance.rate = 1;
 
-  utterance.pitch = 1;
+  utterance.rate =
+    1;
 
-  utterance.volume = 1;
+  utterance.pitch =
+    1;
 
-  utterance.lang = "en-IN";
+  utterance.volume =
+    1;
+
+  utterance.lang =
+    "en-IN";
+
 
   window.speechSynthesis.speak(
     utterance
   );
+
 }
 
 
@@ -1125,23 +1305,32 @@ async function sendMessage(
       ? forcedText.trim()
       : input.value.trim();
 
+
   if (!text) {
+
     return;
+
   }
+
 
   addMessage(
     text,
     "user"
   );
 
+
   input.value = "";
 
-  sendButton.disabled = true;
+  sendButton.disabled =
+    true;
 
-  voiceButton.disabled = true;
+  voiceButton.disabled =
+    true;
+
 
   const thinking =
     addThinking();
+
 
   try {
 
@@ -1198,16 +1387,17 @@ async function sendMessage(
       lastReply =
         data.reply || "";
 
+
       addMessage(
         lastReply,
         "bot"
       );
 
-      /* Speak Livtron's answer */
 
       speak(
         lastReply
       );
+
 
     } else {
 
@@ -1222,11 +1412,13 @@ async function sendMessage(
 
     }
 
+
   }
 
   catch (error) {
 
     thinking.remove();
+
 
     addMessage(
       "❌ Connection problem:\n" +
@@ -1234,12 +1426,14 @@ async function sendMessage(
       "bot"
     );
 
+
     console.error(
       "Livtron error:",
       error
     );
 
   }
+
 
   sendButton.disabled =
     false;
@@ -1266,11 +1460,14 @@ if (SpeechRecognition) {
   recognition =
     new SpeechRecognition();
 
+
   recognition.lang =
     "en-IN";
 
+
   recognition.continuous =
     false;
+
 
   recognition.interimResults =
     false;
@@ -1279,11 +1476,14 @@ if (SpeechRecognition) {
   recognition.onstart =
     function() {
 
-      isListening = true;
+      isListening =
+        true;
+
 
       voiceButton.classList.add(
         "listening"
       );
+
 
       voiceLabel.textContent =
         "LISTENING...";
@@ -1295,13 +1495,18 @@ if (SpeechRecognition) {
     function(event) {
 
       const transcript =
-        event.results[0][0].transcript;
+        event
+          .results[0][0]
+          .transcript;
+
 
       input.value =
         transcript;
 
+
       voiceLabel.textContent =
         "PROCESSING...";
+
 
       sendMessage(
         transcript
@@ -1318,6 +1523,7 @@ if (SpeechRecognition) {
         event.error
       );
 
+
       voiceLabel.textContent =
         "VOICE ERROR";
 
@@ -1327,11 +1533,14 @@ if (SpeechRecognition) {
   recognition.onend =
     function() {
 
-      isListening = false;
+      isListening =
+        false;
+
 
       voiceButton.classList.remove(
         "listening"
       );
+
 
       voiceLabel.textContent =
         "TAP TO SPEAK";
@@ -1374,9 +1583,13 @@ voiceButton.addEventListener(
 
       recognition.start();
 
-    } catch (error) {
+    }
 
-      console.error(error);
+    catch (error) {
+
+      console.error(
+        error
+      );
 
     }
 
@@ -1385,7 +1598,7 @@ voiceButton.addEventListener(
 
 
 /* =================================
-   SEND BUTTON
+   SEND
 ================================= */
 
 sendButton.addEventListener(
@@ -1399,7 +1612,7 @@ sendButton.addEventListener(
 
 
 /* =================================
-   ENTER KEY
+   ENTER
 ================================= */
 
 input.addEventListener(
@@ -1421,7 +1634,7 @@ input.addEventListener(
 
 
 /* =================================
-   STOP SPEECH
+   STOP VOICE
 ================================= */
 
 stopButton.addEventListener(
@@ -1435,7 +1648,7 @@ stopButton.addEventListener(
 
 
 /* =================================
-   SPEAK LAST RESPONSE
+   SPEAK LAST
 ================================= */
 
 speakLastButton.addEventListener(
@@ -1444,7 +1657,9 @@ speakLastButton.addEventListener(
 
     if (lastReply) {
 
-      speak(lastReply);
+      speak(
+        lastReply
+      );
 
     }
 
@@ -1453,14 +1668,49 @@ speakLastButton.addEventListener(
 
 
 /* =================================
-   CLEAR CHAT
+   OPEN DELETE CONFIRMATION
 ================================= */
 
 clearButton.addEventListener(
   "click",
   function() {
 
+    deleteConfirm.style.display =
+      "flex";
+
+  }
+);
+
+
+/* =================================
+   CANCEL DELETE
+================================= */
+
+cancelDelete.addEventListener(
+  "click",
+  function() {
+
+    deleteConfirm.style.display =
+      "none";
+
+  }
+);
+
+
+/* =================================
+   DELETE CHAT
+================================= */
+
+confirmDelete.addEventListener(
+  "click",
+  function() {
+
     stopSpeaking();
+
+    localStorage.removeItem(
+      "livtron_chat"
+    );
+
 
     chatBox.innerHTML = `
       <div class="message bot">
@@ -1470,13 +1720,28 @@ clearButton.addEventListener(
       </div>
     `;
 
+
     lastReply = "";
+
+
+    deleteConfirm.style.display =
+      "none";
+
+
+    saveChat();
 
   }
 );
+
+
+/* =================================
+   LOAD SAVED CHAT
+================================= */
+
+loadChat();
 
 </script>
 
 </body>
 
-      </html>
+   </html>
